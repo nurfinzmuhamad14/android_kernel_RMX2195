@@ -49,7 +49,7 @@
 || CONFIG_OPPO_BSP_SECCOM_PLATFORM == 4250
 #include <linux/uaccess.h>
 #else
-#include <asm/uaccess.h>
+#include <linux/uaccess.h>
 #endif
 
 #include <linux/delay.h>
