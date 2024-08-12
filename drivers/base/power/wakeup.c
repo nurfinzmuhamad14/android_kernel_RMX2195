@@ -1657,10 +1657,10 @@ static int __init wakelock_profiler_init(void)
 		printk(KERN_WARNING "[%s] failed to create a sysfs group %d\n",
 				__func__, retval);
 	}
-//#if defined(CONFIG_DRM_MSM)
-	//retval = msm_drm_register_client(&ws_fb_notify_block);
-	//if (retval) {
-		//printk("%s error: register notifier failed,drm!\n", __func__);
+#if defined(CONFIG_DRM_MSM)
+	retval = msm_drm_register_client(&ws_fb_notify_block);
+	if (retval) {
+		printk("%s error: register notifier failed,drm!\n", __func__);
 	}
 #elif defined(CONFIG_FB)
     retval = fb_register_client(&ws_fb_notify_block);
