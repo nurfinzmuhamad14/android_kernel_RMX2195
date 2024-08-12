@@ -903,7 +903,7 @@ static int silfp_init(struct silfp_data *fp_dev)
     fp_dev->notif.notifier_call = silfp_fb_callback;
     LOG_MSG_DEBUG(INFO_LOG, "[%s] msm_drm_register_client\n", __func__);
     //fb_register_client(&fp_dev->notif);
-    status = msm_drm_register_client(&fp_dev->notif);
+    //status = msm_drm_register_client(&fp_dev->notif);
     if (status == -1) {
         return status;
     }
