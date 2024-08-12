@@ -390,9 +390,9 @@ static long fpsensor_ioctl(struct file *filp, unsigned int cmd, unsigned long ar
         fpsensor_dev->device_available = 0;
         fpsensor_gpio_free(fpsensor_dev);
         fpsensor_dev_cleanup(fpsensor_dev);
-#if FP_NOTIFY
-        fpsensor_fb_unregister_client(&fpsensor_dev->notifier);
-#endif
+//#if FP_NOTIFY
+        //fpsensor_fb_unregister_client(&fpsensor_dev->notifier);
+//#endif
         fpsensor_dev->free_flag = 1;
         fpsensor_debug(INFO_LOG, "%s remove finished\n", __func__);
         break;
@@ -739,9 +739,9 @@ static int fpsensor_remove(struct platform_device *pdev)
     if (fpsensor_dev->irq)
         free_irq(fpsensor_dev->irq, fpsensor_dev);
 
-#if FP_NOTIFY
-    fpsensor_fb_unregister_client(&fpsensor_dev->notifier);
-#endif
+//#if FP_NOTIFY
+    //fpsensor_fb_unregister_client(&fpsensor_dev->notifier);
+//#endif
     fpsensor_gpio_free(fpsensor_dev);
     fpsensor_dev_cleanup(fpsensor_dev);
 #if FPSENSOR_WAKEUP_TYPE == FPSENSOR_WAKEUP_SOURCE
