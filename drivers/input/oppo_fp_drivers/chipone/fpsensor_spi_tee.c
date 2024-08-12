@@ -685,10 +685,10 @@ static int fpsensor_probe(struct platform_device *pdev)
     wake_lock_init(&g_ttw_wl, WAKE_LOCK_SUSPEND, "fpsensor_ttw_wl");
 #endif
     fpsensor_dev->device_available = 1;
-#if FP_NOTIFY
+//#if FP_NOTIFY
     fpsensor_dev->notifier.notifier_call = fpsensor_fb_notifier_callback;
-    fpsensor_fb_register_client(&fpsensor_dev->notifier);
-#endif
+    //fpsensor_fb_register_client(&fpsensor_dev->notifier);
+//#endif
 
     printk("fpsensor: %s 671 ",__func__);
 #if 1
