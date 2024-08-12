@@ -124,11 +124,11 @@ static struct notifier_block fb_nb = {
 int __init display_info_register(struct hypnus_data *hypdata)
 {
 #if defined(CONFIG_ARCH_MSM) || defined(CONFIG_ARCH_QCOM)
-#ifdef CONFIG_DRM_MSM
-	msm_drm_register_client(&fb_nb);
-#else
+//#ifdef CONFIG_DRM_MSM
+	//msm_drm_register_client(&fb_nb);
+//#else
 	fb_register_client(&fb_nb);
-#endif /* CONFIG_DRM_MSM */
+//#endif /* CONFIG_DRM_MSM */
 #elif defined(CONFIG_MTK_PLATFORM)
 	mtkfb_register_client(&fb_nb);
 #else
