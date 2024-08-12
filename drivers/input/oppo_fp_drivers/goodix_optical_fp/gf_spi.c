@@ -698,7 +698,7 @@ static int gf_probe(struct platform_device *pdev)
 #endif
 
     gf_dev->notifier = goodix_noti_block;
-    status = msm_drm_register_client(&gf_dev->notifier);
+    //status = msm_drm_register_client(&gf_dev->notifier);
     if (status == -1) {
         return status;
     }
