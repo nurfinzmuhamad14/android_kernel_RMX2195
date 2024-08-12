@@ -510,12 +510,12 @@ int __init wakeup_reason_init(void)
 	}
     #ifdef VENDOR_EDIT
     //Nanwei.Deng@BSP.Power.Basic,2018/11/19, add for analysis power coumption.
-#ifdef CONFIG_DRM_MSM
-	msm_drm_register_client(&wakeup_src_fb_notif);
-#else
+//#ifdef CONFIG_DRM_MSM
+	//msm_drm_register_client(&wakeup_src_fb_notif);
+//#else
 	fb_register_client(&wakeup_src_fb_notif);
-#endif
-    #endif /* VENDOR_EDIT */
+//#endif
+    //#endif /* VENDOR_EDIT */
 	return 0;
 }
 
