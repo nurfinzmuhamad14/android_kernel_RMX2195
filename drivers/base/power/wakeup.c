@@ -40,9 +40,9 @@
 #include <linux/fb.h>
 #include <linux/notifier.h>
 #endif
-#ifdef CONFIG_DRM_MSM
+//#ifdef CONFIG_DRM_MSM
 #include <linux/msm_drm_notify.h>
-#endif
+//#endif
 
 //#define WAKEUP_SOURCE_MODEM 					60	//qcom,glink-smem-native-xprt-modem
 //#define WAKEUP_SOURCE_MODEM_IPA					119 //ipa
@@ -1657,17 +1657,17 @@ static int __init wakelock_profiler_init(void)
 		printk(KERN_WARNING "[%s] failed to create a sysfs group %d\n",
 				__func__, retval);
 	}
-#if defined(CONFIG_DRM_MSM)
+/*#if defined(CONFIG_DRM_MSM)
 	retval = msm_drm_register_client(&ws_fb_notify_block);
 	if (retval) {
 		printk("%s error: register notifier failed,drm!\n", __func__);
 	}
-#elif defined(CONFIG_FB)
+#elif defined(CONFIG_FB)*/
     retval = fb_register_client(&ws_fb_notify_block);
 	if (retval) {
 		printk("%s error: register notifier failed!\n", __func__);
 	}
-#endif
+//#endif
 
 	return 0;
 }
