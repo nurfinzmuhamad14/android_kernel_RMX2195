@@ -508,7 +508,7 @@ int __init wakeup_reason_init(void)
 		printk(KERN_WARNING "[%s] failed to create a sysfs group %d\n",
 				__func__, retval);
 	}
-    #ifdef VENDOR_EDIT
+   // #ifdef VENDOR_EDIT
     //Nanwei.Deng@BSP.Power.Basic,2018/11/19, add for analysis power coumption.
 //#ifdef CONFIG_DRM_MSM
 	//msm_drm_register_client(&wakeup_src_fb_notif);
