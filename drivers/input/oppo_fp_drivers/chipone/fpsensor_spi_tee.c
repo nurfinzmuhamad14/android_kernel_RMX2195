@@ -38,7 +38,7 @@
 #define FP_NOTIFY_ON                            MSM_DRM_BLANK_UNBLANK
 #define FP_NOTIFY_OFF                           MSM_DRM_BLANK_POWERDOWN
 #define FP_NOTIFY_EVENT_BLANK                   MSM_DRM_EARLY_EVENT_BLANK    //MSM_DRM_EVENT_BLANK
-#define fpsensor_fb_register_client(client)     msm_drm_register_client(client);
+//#define fpsensor_fb_register_client(client)     msm_drm_register_client(client);
 #define fpsensor_fb_unregister_client(client)   msm_drm_unregister_client(client);
 #else
 #define FP_NOTIFY_ON                            FB_BLANK_UNBLANK
